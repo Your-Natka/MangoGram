@@ -1,6 +1,18 @@
 # MangoGram (Socket Messenger)
 
-Simple console messenger using Python sockets and threading.
+Console messenger using Python sockets and threading.
+
+## Features
+
+- Private messaging
+- Multiple clients
+- Timestamps
+- Thread-based server
+
+## Commands
+
+- Type messages and press Enter
+- `/exit` — leave the chat
 
 ## Technologies
 
@@ -10,6 +22,5 @@ Simple console messenger using Python sockets and threading.
 
 ## How to run
 
-1. Run server.py
-2. Run client.py in two terminals
-3. Enter usernames and chat
+1. python server.py
+2. python client.py

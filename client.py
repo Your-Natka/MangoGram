@@ -7,10 +7,16 @@ SERVER_PORT = 1234
 client_socket = socket.socket()
 client_socket.connect((SERVER_HOST, SERVER_PORT))
 
-name = input("Enter your name: ")
+while True:
+    name = input("Enter your name: ").strip()
+    if name:
+        break
 client_socket.send(name.encode())
 
-target = input("Who are you going to talk to: ")
+while True:
+    target = input("Who are you going to talk to: ").strip()
+    if target:
+        break
 client_socket.send(target.encode())
 
 def receive():
@@ -25,4 +31,8 @@ Thread(target=receive, daemon=True).start()
 
 while True:
     msg = input()
+    if msg.lower() == "/exit":
+        client_socket.close()
+        print("Disconnected from server")
+        break
     client_socket.send(msg.encode())
